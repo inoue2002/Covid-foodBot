@@ -1,0 +1,55 @@
+{
+  "type": "flex",
+  "altText": "Flex Message",
+  "contents": {
+    "type": "bubble",
+    "direction": "ltr",
+    "header": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "登録データ",
+          "align": "start",
+          "weight": "bold"
+        },
+        {
+          "type": "text",
+          "text": "xxxxxxxxxさん"
+        }
+      ]
+    },
+    "hero": {
+      "type": "image",
+      "url": "xxxxxxxxxxxxxxxxxxxxx.png",
+      "size": "full",
+      "aspectRatio": "1.51:1",
+      "aspectMode": "fit"
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "会員番号",
+          "align": "start"
+        },
+        {
+          "type": "text",
+          "text": "xxxxxxxxxuser_IDxxxxxx",
+          "wrap": true
+        },
+        {
+          "type": "text",
+          "text": "クラス情報"
+        },
+        {
+          "type": "text",
+          "text": "XXXXXXX組"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "type": "flex",
+  "altText": "Flex Message",
+  "contents": {
+    "type": "bubble",
+    "direction": "ltr",
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "spacing": "xl",
+      "margin": "none",
+      "contents": [
+        {
+          "type": "text",
+          "text": "範囲確認",
+          "margin": "xxl",
+          "weight": "bold"
+        },
+        {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "週末",
+                "uri": "https://liff.line.me/1653997269-LwDJWpjJ"
+              }
+            },
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "水曜",
+                "uri": "https://liff.line.me/1653997269-7xNqVQzq"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

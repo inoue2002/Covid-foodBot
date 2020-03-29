@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>メッセージ送信アプリ</title>
+    </head>
+    <body>
+        <h1 id="displaynamefield"></h1>
+        <button type="button" class="btn btn-danger" id="logout" onclick="LogoutAction();">ログアウト</button>
+        <h1></h1><a href="https://lin.ee/yIBSBtA"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" ></a>
+
+        <form id="send-message">
+            <p>みんなで助けあおう！</p>
+            <button id="send" class="btn btn-primary">友達に共有する</button>
+        </form>
+
+        <!-- load jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <!-- load LIFF SDK -->
+        <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+        <script>
+            var userId = "";
+            document.getElementById("logout").style.display ="none";
+            window.onload = function() {
+                initializeLiff("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+            };
+
+            function initializeLiff(myLiffId) {
+                liff
+                    .init({
+                        liffId: myLiffId
+                    })
+                    .then(() => {
+                        //LINEアプリで起動しているかどうかとログインをしているのかを判断している
+                        if (!liff.isInClient() && !liff.isLoggedIn()){
+                            window.alert("LINEアカウントにログインしてください。");
+                            liff.login();
+                        }else{
+                            // start to use LIFF's api
+                            liff.getProfile().then(function(profile) {
+                                document.getElementById('displaynamefield').textContent = 'ようこそ' + profile.displayName + 'さん';
+                                userId = profile.userId;
+                                if (!liff.isInClient()){
+                                    document.getElementById("logout").style.display = "block"
+                                }
+                            }).catch(function(error) {
+                                window.alert('Error getting profile: ' + error);
+                            })
+                        }
+
+                    })
+                    .catch((err) => {
+                        document.getElementById('displaynamefield').textContent = err;
+                    });
+            }
+            // メッセージの送信
+            $(function() {
+                $('#send').click(function(e) {
+                    e.preventDefault();
+                    var val = {
+  "type": "flex",
+  "altText": "Flex Message",
+  "contents": {
+    "type": "bubble",
+    "direction": "ltr",
+    "header": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "コロナによる食品ロスを無くそう",
+          "align": "center"
+        }
+      ]
+    },
+    "hero": {
+      "type": "image",
+      "url": "https://obs.line-scdn.net/0hLR4sUWFXE30JCjtl1x5sKihXGB86aA12K2xbHykLTE4gPlRFMW8MEy0DTEQkb1Z7M25YE0IKRR9xPFciNildSH9ZGh0mOA/f256x256",
+      "size": "full",
+      "aspectRatio": "1.51:1",
+      "aspectMode": "fit"
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "ワンタップで困っている人を確認！",
+          "align": "center"
+        }
+      ]
+    },
+    "footer": {
+      "type": "box",
+      "layout": "horizontal",
+      "contents": [
+        {
+          "type": "button",
+          "action": {
+            "type": "uri",
+            "label": "友達追加する",
+            "uri": "https://lin.ee/yIBSBtA"
+          },
+          "color": "#F03FB1",
+          "style": "primary"
+        }
+      ]
+    }
+  }
+}
+                    liff.shareTargetPicker([
+                        val
+                        ])
+                        .then(
+                            alert("メッセージを送信しました")
+                        ).catch(function(res) {
+                            alert("送信に失敗しました")
+                        })
+                });
+            });
+            // ログアウトの処理
+            function LogoutAction(){
+                liff.logout();
+                window.location.reload();
+            }
+        </script>
+    </body>
+</html

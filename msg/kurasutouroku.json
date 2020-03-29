@@ -1,0 +1,88 @@
+{
+  "type": "text",
+  "text": "あなたのクラスを選んでください。\n⚠︎後から変更できません",
+  "quickReply": {
+    "items": [
+      {
+        "type": "action",
+        "action": {
+          "type": "postback",
+          "label": "1",
+          "data": "class=1",
+          "text": ""
+        }
+      },
+      {
+        "type": "action",
+
+        "action": {
+          "type": "postback",
+          "label": "2",
+          "data": "class=2",
+          "text": ""
+        }
+      },
+      {
+        "type": "action",
+
+        "action": {
+          "type": "postback",
+          "label": "3",
+          "data": "class=3",
+          "text": ""
+        }
+      },
+      {
+        "type": "action",
+
+        "action": {
+          "type": "postback",
+          "label": "4",
+          "data": "class=4",
+          "text": ""
+        }
+      },
+      {
+        "type": "action",
+
+        "action": {
+          "type": "postback",
+          "label": "5",
+          "data": "class=5",
+          "text": ""
+        }
+      },
+      {
+        "type": "action",
+
+        "action": {
+          "type": "postback",
+          "label": "6",
+          "data": "class=6",
+          "text": ""
+        }
+      },
+      {
+        "type": "action",
+
+        "action": {
+          "type": "postback",
+          "label": "7",
+          "data": "class=7",
+          "text": ""
+        }
+      },
+
+      {
+        "type": "action",
+
+        "action": {
+          "type": "postback",
+          "label": "8",
+          "data": "class=8",
+          "text": ""
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0"
+    />
+    <title>Form</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+    <script>
+      $(document).ready(function() {
+        initializeLiff("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+        $("#form").submit(function(event) {
+          var values = {};
+          $.each($("#form").serializeArray(), function(i, field) {
+            values[field.name] = field.value;
+          });
+          console.log(values);
+          
+        
+          var params = new URLSearchParams(
+            decodeURIComponent(window.location.search.substring(15))
+          );
+         
+          liff
+            .sendMessages([
+              {
+                type: "text",
+                text: JSON.stringify(values)
+              }
+            ])
+            .then(function() {
+              liff.closeWindow();
+            })
+            .catch(function(error) {
+              window.alert("Failed to send message " + error);
+            });
+
+          event.preventDefault();
+        });
+      });
+      function initializeLiff(liffId) {
+        liff
+          .init({
+            liffId: liffId
+          })
+          .then(() => {
+            console.log("LIFF Initialization succeed");
+          })
+          .catch(err => {
+            console.log("LIFF Initialization failed ", err);
+          });
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <form id="form" class="form mt-3">
+        <div class="form-group">
+          <label for="title">募集タイトル</label>
+            <input type="text" id="title" name="title">
+        </div>
+        <div class="form-group">
+          <label for="name">商品名</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="form-group">
+          <label for="image">画像URL</label>
+            <input type="text" id="image" name="image">
+        </div>
+        <div class="form-group">
+          <label for="introduction">商品紹介</label>
+            <input type="text" id="introduction" name="introduction">
+        </div>
+        <div class="form-group">
+          <label for="group">団体/企業名</label>
+            <input type="text" id="group" name="group">
+        </div>
+        <div class="form-group">
+          <label for="url">団体/企業URL</label>
+            <input type="text" id="url" name="url">
+        </div>
+
+      
+    
+        <input
+          type="submit"
+          class="btn btn-lg btn-primary w-100"
+          value="新規登録"
+        />
+      </form>
+    </div>
+  </body>
+</html>

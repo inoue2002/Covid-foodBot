@@ -1,0 +1,44 @@
+{
+  "type": "flex",
+  "altText": "Flex Message",
+  "contents": {
+    "type": "bubble",
+    "direction": "ltr",
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "ようかんBotに画像を提供しよう！"
+        },
+        {
+          "type": "text",
+          "text": "課題範囲や時間割はこちらから！"
+        }
+      ]
+    },
+    "footer": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "button",
+          "action": {
+            "type": "uri",
+            "label": "写真をとる",
+            "uri": "https://line.me/R/nv/camera/"
+          }
+        },
+        {
+          "type": "button",
+          "action": {
+            "type": "uri",
+            "label": "写真フォルダーから送る",
+            "uri": "https://line.me/R/nv/cameraRoll/multi"
+          }
+        }
+      ]
+    }
+  }
+}

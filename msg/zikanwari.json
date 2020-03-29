@@ -1,0 +1,81 @@
+{
+  "type": "text",
+  "text": "何組？",
+  "quickReply": {
+    "items": [
+      {
+        "type": "action",
+
+        "action": {
+          "type": "message",
+          "label": "1",
+          "text": "１組"
+        }
+      },
+      {
+        "type": "action",
+
+        "action": {
+          "type": "message",
+          "label": "2",
+          "text": "２組"
+        }
+      },
+      {
+        "type": "action",
+
+        "action": {
+          "type": "message",
+          "label": "３",
+          "text": "3組"
+        }
+      },
+      {
+        "type": "action",
+
+        "action": {
+          "type": "message",
+          "label": "4",
+          "text": "4組"
+        }
+      },
+      {
+        "type": "action",
+
+        "action": {
+          "type": "message",
+          "label": "5",
+          "text": "5組"
+        }
+      },
+      {
+        "type": "action",
+
+        "action": {
+          "type": "message",
+          "label": "6",
+          "text": "6組"
+        }
+      },
+      {
+        "type": "action",
+
+        "action": {
+          "type": "message",
+          "label": "7",
+          "text": "7組"
+        }
+      },
+
+      {
+        "type": "action",
+
+        "action": {
+          "type": "message",
+          "label": "8",
+          "text": "8組"
+        }
+      }
+    ]
+  }
+}

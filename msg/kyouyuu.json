@@ -1,0 +1,41 @@
+{
+  "type": "flex",
+  "altText": "Flex Message",
+  "contents": {
+    "type": "bubble",
+    "direction": "ltr",
+    "header": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "ようかんBot",
+          "align": "center",
+          "weight": "bold"
+        }
+      ]
+    },
+    "hero": {
+      "type": "image",
+      "url": "https://qr-official.line.me/sid/L/742zgizk.png",
+      "size": "full",
+      "aspectRatio": "1.51:1",
+      "aspectMode": "fit"
+    },
+    "footer": {
+      "type": "box",
+      "layout": "horizontal",
+      "contents": [
+        {
+          "type": "button",
+          "action": {
+            "type": "uri",
+            "label": "友達に送る",
+            "uri": "https://line.me/R/nv/recommendOA/@742zgizk"
+          }
+        }
+      ]
+    }
+  }
+}

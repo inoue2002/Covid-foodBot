@@ -1,0 +1,68 @@
+{
+  "type": "flex",
+  "altText": "Flex Message",
+  "contents": {
+    "type": "bubble",
+    "direction": "ltr",
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "spacing": "none",
+      "margin": "none",
+      "contents": [
+        {
+          "type": "text",
+          "text": "範囲確認",
+          "margin": "xxl",
+          "weight": "bold"
+        },
+        {
+          "type": "box",
+          "layout": "horizontal",
+          "spacing": "sm",
+          "margin": "sm",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "シスタン",
+                "uri": "https://liff.line.me/1653997269-zmMd140d"
+              }
+            },
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "漢字",
+                "uri": "https://liff.line.me/1653997269-KLGqEn7q"
+              }
+            }
+          ]
+        },
+        {
+          "type": "box",
+          "layout": "horizontal",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "古語",
+                "uri": "https://liff.line.me/1653997269-OX1p2zVp"
+              }
+            },
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "UPGRADE",
+                "uri": "https://liff.line.me/1653997269-QPYxvR2x"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
