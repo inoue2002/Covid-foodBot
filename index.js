@@ -1,11 +1,7 @@
 "use strict";
-
 const line = require("@line/bot-sdk");
 const crypto = require("crypto");
 const AWS = require("aws-sdk");
-const axios = require("axios");
-var request = require("request");
-var fs = require("fs");
 //インスタンス生成
 const client = new line.Client({ channelAccessToken: process.env.ACCESSTOKEN });
 
@@ -198,7 +194,7 @@ async function textFunc(e) {
 
   const postbackFunc = async function(e) {
     let mes;
-    mes = { type: "text", text: `受け取ったメッセージ：${(e.postback, data)}` };
+    mes = { type: "text", text: `受け取ったメッセージ：${(e.postback.data)}` };
     return mes;
   };
 
