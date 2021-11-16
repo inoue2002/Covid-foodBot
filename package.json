@@ -19,7 +19,7 @@
   "homepage": "https://github.com/youkan2002/youkan_profiele_bot#readme",
   "dependencies": {
     "@line/bot-sdk": "^6.8.4",
-    "aws-sdk": "^2.641.0",
+    "aws-sdk": "^2.814.0",
     "chalk": "^3.0.0",
     "crypto": "^1.0.1",
     "request": "^2.88.2",
